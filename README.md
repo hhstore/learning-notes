@@ -1,26 +1,33 @@
-# iPyScript
-Python各种常用处理脚本
+# learning-notes
 
-## 更新目录:
-
-
-### 01. Python高级语法特性
-- [装饰器](./01_Usefull/decorator)
-- [yield](./01_Usefull/yield)
-
-### 02. IO读写,各种类型文件处理
-- [文件读写-编码问题](./02_IO/io_encoding_fix)
-- [读写: word文件](./02_IO/parse_docx)
+- 梳理以前学习阶段的各种学习笔记, 代码, etc
+- 主要包括: Python, Golang, Javascript 等
+- 代码整理:
+    - 练习代码
+    - 小的项目
+    - 高质量的模块
+- 笔记整理:
+    - 很多阶段性的学习成果, 归纳的笔记.
+    - 整理的一些思维导图.
 
 
-### 03. 网络编程
+## [Python 部分](./python):
 
-- [socket](./03_Network)
-- [urllib](./03_Network)
+- 基础语法
+- 高阶语法
+- 设计模式
+- 多线程, 多进程
+- 爬虫
+- 同步/异步
 
-### 04. 分布式编程
 
-- [RPC 远程过程调用](./03_Network/RPC)
+## [Golang 部分](./golang):
 
-### 05. 单元测试
-- [单元测试](./04_UnitTest)
+- 基础语法
+- 高阶语法
+
+
+## [Javascript 部分](./javascript):
+
+- es6语法
+- 高阶特性
