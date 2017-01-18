@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>在线计算器1.0</title>
+</head>
+<body>
+
+<h2>简单的加法计算器</h2>
+
+<form action="" method="post" name="calculator">
+    {{ form.hidden_tag() }}
+    <p>
+        数据A:<br>
+        {{ form.number1 }} <br>
+
+        {% for error in form.errors.name %}
+        <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        数据B:<br>
+        {{ form.number2 }} <br>
+
+        {% for error in form.errors.name %}
+        <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+    </p>
+
+    <p><input type="submit" value="计算">
+
+    <p>
+        计算结果:<br>
+        <br>
+        {{ result }} <br>
+
+        {% for error in form.errors.name %}
+        <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+    </p>
+
+
+
+</form>
+
+
+</body>
+</html>
