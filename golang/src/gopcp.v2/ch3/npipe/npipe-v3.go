@@ -10,6 +10,11 @@ import (
 
 /****************************************************
 
+        多进程编程 - IPC通信方式 - 管道
+
+- 基于管道方式:
+	- 基于 命名管道 和 内存管道
+
 说明:
 	1. 基于反射reflect, 实现函数的多态(行为相同,参数类型不同)
 	2. 基于reflect各种接口方法, 获取参数, 执行函数调用
@@ -54,9 +59,9 @@ func doPipe(pipeFunc reflect.Value) {
 	pipeRet := pipeFunc.Call(pipeArgs) // 执行 Pipe() 方法
 
 	fmt.Println("\n====================\n[pipeResult]:", pipeRet)
-	if len(pipeRet) == 3 { // 基于os.Pipe()
+	if len(pipeRet) == 3 { // 基于os.Pipe(), 命名管道
 		reader, writer, _ = pipeRet[0], pipeRet[1], pipeRet[2]
-	} else { // 基于io.Pipe()
+	} else { // 基于io.Pipe(), 内存管道
 		reader, writer = pipeRet[0], pipeRet[1]
 	}
 
