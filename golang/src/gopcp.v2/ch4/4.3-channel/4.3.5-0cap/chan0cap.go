@@ -6,19 +6,24 @@ import (
 )
 
 /****************************************************
+		缓冲通道 和 非缓冲通道
 
-        利用 channel 通信
 说明:
-	- 发送 go 例程
-	- 接收部分, 利用 select{}, 实现对 channel 数据收发.
-	- 注意 chan 的长度 为 0.
+	- 两种通道区别:
+		- 容量为0, 为 非缓冲通道
+		- 容量不为0, 为 缓冲通道
+	- 本例为非缓冲通道:
+		- 注意 chan 的长度 为 0.
+		- 利用 channel 通信
+		- 发送 go 例程
+		- 接收部分, 利用 select{}, 实现对 channel 数据收发.
 
 ****************************************************/
 
 func main() {
 	sendingInterval := time.Second       // 发送间隔时间
 	receptionInterval := time.Second * 2 // 接收间隔时间
-	intChan := make(chan int, 0)         // 通信 channel, [整型, size = 0, 对比 string, 奇怪?]
+	intChan := make(chan int, 0)         // 非缓冲通道, 用于数据传输. [整型, size = 0, 对比 string, 奇怪?]
 
 	fmt.Println("chan size:", len(intChan)) // ? [size = 0]
 
