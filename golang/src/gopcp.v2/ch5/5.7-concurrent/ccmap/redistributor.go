@@ -1,7 +1,7 @@
 package ccmap
 
 import (
-	"fmt"
+	//"fmt"
 	"sync/atomic"
 )
 
@@ -96,14 +96,14 @@ var bucketStatusTemplate = `Check bucket status:
 
 //
 func (pr *myPairRedistributor) CheckBucketStatus(pairTotal uint64, bucketSize uint64) (bucketStatus BucketStatus) {
-	defer func() {
-		fmt.Printf(bucketStatusTemplate,
-			pairTotal, bucketSize,
-			atomic.LoadUint64(&pr.upperThreshold),
-			atomic.LoadUint64(&pr.overweightBucketCount),
-			atomic.LoadUint64(&pr.emptyBucketCount),
-		)
-	}()
+	//defer func() {
+	//	fmt.Printf(bucketStatusTemplate,
+	//		pairTotal, bucketSize,
+	//		atomic.LoadUint64(&pr.upperThreshold),
+	//		atomic.LoadUint64(&pr.overweightBucketCount),
+	//		atomic.LoadUint64(&pr.emptyBucketCount),
+	//	)
+	//}()
 
 	// 原子操作:
 	if bucketSize > DEFAULT_BUCKET_MAX_SIZE ||
@@ -138,14 +138,14 @@ func (pr *myPairRedistributor) Redistribe(
 	currentNumber := uint64(len(buckets))
 	newNumber := currentNumber
 
-	defer func() {
-		fmt.Printf(
-			redistributionTemplate,
-			bucketStatus,
-			currentNumber,
-			newNumber,
-		)
-	}()
+	//defer func() {
+	//	fmt.Printf(
+	//		redistributionTemplate,
+	//		bucketStatus,
+	//		currentNumber,
+	//		newNumber,
+	//	)
+	//}()
 
 	//
 	switch bucketStatus {
