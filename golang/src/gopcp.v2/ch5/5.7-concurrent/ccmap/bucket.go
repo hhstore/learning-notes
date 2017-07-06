@@ -37,7 +37,7 @@ type aBucket struct {
 // 占位符
 //	- 原子值不可存 nil, 当散列桶为空时, 用此占位.
 //
-var placeholder Pair = &pair{}
+var placeholder Pair = &aPair{}
 
 //
 func newBucket() Bucket {
