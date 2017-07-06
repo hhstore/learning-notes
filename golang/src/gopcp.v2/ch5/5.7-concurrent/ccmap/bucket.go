@@ -63,7 +63,7 @@ func (b *aBucket) GetFirstPair() Pair {
 func (b *aBucket) Get(key string) Pair {
 
 	firstPair := b.GetFirstPair() // 链表头
-	if firstPair == nil { // 链表为空时
+	if firstPair == nil {         // 链表为空时
 		return nil
 	}
 
@@ -95,7 +95,7 @@ func (b *aBucket) Put(p Pair, lock sync.Locker) (bool, error) {
 
 	//
 	firstPair := b.GetFirstPair() // 取首个键值对
-	if firstPair == nil { // 若首个键值对为空
+	if firstPair == nil {         // 若首个键值对为空
 		b.firstValue.Store(p)
 		atomic.AddUint64(&b.size, 1)
 		return true, nil
