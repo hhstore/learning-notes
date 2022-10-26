@@ -12,10 +12,13 @@
 > repos: 
 
 - ✅ https://github.com/better-rs/learn-rs
+    - rust 学习
 - ✅ https://github.com/better-go/learn-go
+    - golang 学习
 - ✅ https://github.com/better-dart/learn-dart
+    - dart/flutter 学习
 - ✅ https://github.com/better-zig/learn-zig
-
+    - zig 学习
 
 
 ## 说明:
